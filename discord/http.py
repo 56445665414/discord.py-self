@@ -713,25 +713,26 @@ class HTTPClient:
 
         # Header creation
         headers = {
-            'Accept-Language': 'en-US',
+            'Accept': '*/*',
+            'Accept-Language': 'ja,en-US;q=0.9',
             'Cache-Control': 'no-cache',
+            "Cookie": "locale=en-GB;",
             'Connection': 'keep-alive',
             'Origin': 'https://discord.com',
             'Pragma': 'no-cache',
             'Referer': 'https://discord.com/channels/@me',
-            'Sec-CH-UA': '"Google Chrome";v="{0}", "Chromium";v="{0}", ";Not-A.Brand";v="24"'.format(
-                self.browser_version.split('.')[0]
-            ),
+            'Sec-CH-UA': '"Not_A Brand";v="8", "Chromium";v="120"',
             'Sec-CH-UA-Mobile': '?0',
             'Sec-CH-UA-Platform': '"Windows"',
             'Sec-Fetch-Dest': 'empty',
             'Sec-Fetch-Mode': 'cors',
             'Sec-Fetch-Site': 'same-origin',
             'User-Agent': self.user_agent,
-            'X-Discord-Locale': self.get_locale(),
+            'X-Discord-Locale': "en-GB",
             'X-Debug-Options': 'bugReporterEnabled',
             'X-Super-Properties': self.encoded_super_properties,
         }
+
 
         # This header isn't really necessary
         # Timezones are annoying, so if it errors, we don't care
